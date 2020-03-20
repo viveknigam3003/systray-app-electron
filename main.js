@@ -26,7 +26,17 @@ app.on('ready', () => {
 
 const createTray = () => {
   tray = new Tray(path.join('electorn-logo-2.png'))
-  //let trayMenu = Menu.buildFromTemplate(trayMenuTemplate)
+  const contextMenu = Menu.buildFromTemplate([
+    { label: 'Quit', click: () => {
+      window.destroy();
+      tray.destroy()}
+    },
+    { label: 'Help Centre', click: () => {
+      console.log("Coming Soon!");
+      }}
+  ])
+  tray.setToolTip('Hello World')
+  tray.setContextMenu(contextMenu)
   tray.on('click', function (event) {
     toggleWindow()
   });
