@@ -4,21 +4,25 @@ const path = require('path');
 let tray = undefined
 let window = undefined
 
+const os = require('os');
+const platforms = {
+  WINDOWS: 'WINDOWS',
+  MAC: 'MAC',
+  LINUX: 'LINUX'
+}
+
+const platformsNames = {
+  win32: platforms.WINDOWS,
+  darwin: platforms.MAC,
+  linux: platforms.LINUX
+}
+
+const currentPlatform = platformsNames[os.platform()];
 
 app.on('ready', () => {
   createTray()
   createWindow()
 })
-
-// const trayMenuTemplate = [  
-//   {
-//      label: 'Quit App',
-//      click: function () {
-//         tray.destroy(),
-//         console.log("Clicked on settings")
-//      }
-//   }
-// ]
 
 const createTray = () => {
   tray = new Tray(path.join('electorn-logo-2.png'))
@@ -32,13 +36,19 @@ const getWindowPosition = () => {
   const windowBounds = window.getBounds();
   const trayBounds = tray.getBounds();
 
-  // Center window horizontally below the tray icon
+  if (currentPlatform != 'LINUX'){
+    // Center window horizontally below the tray icon
   const x = Math.round(trayBounds.x - (trayBounds.width / 2) + (windowBounds.width / 2) - 250);
 
   // Position window 4 pixels vertically below the tray icon
   const y = Math.round(trayBounds.y - trayBounds.height - 415);
 
   return {x: x, y: y};
+  }
+  else{
+    return {x: 1000, y: 4}
+  }
+  
 }
 
 const createWindow = () => {
