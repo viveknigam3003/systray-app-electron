@@ -27,13 +27,17 @@ app.on('ready', () => {
 const createTray = () => {
   tray = new Tray(path.join('electorn-logo-2.png'))
   const contextMenu = Menu.buildFromTemplate([
-    { label: 'Quit', click: () => {
-      window.destroy();
-      tray.destroy()}
+    { label: 'Hello World', click: () => {
+      showWindow();
+    }
     },
     { label: 'Help Centre', click: () => {
       console.log("Coming Soon!");
-      }}
+      }},
+      { label: 'Quit', click: () => {
+        window.destroy();
+        tray.destroy()}
+      }
   ])
   tray.setToolTip('Hello World')
   tray.setContextMenu(contextMenu)
