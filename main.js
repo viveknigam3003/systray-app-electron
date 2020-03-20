@@ -1,4 +1,4 @@
-const {app, BrowserWindow, ipcMain, Tray} = require('electron');
+const {app, BrowserWindow, ipcMain, Tray, Menu} = require('electron');
 const path = require('path');
 
 let tray = undefined
@@ -10,8 +10,19 @@ app.on('ready', () => {
   createWindow()
 })
 
+// const trayMenuTemplate = [  
+//   {
+//      label: 'Quit App',
+//      click: function () {
+//         tray.destroy(),
+//         console.log("Clicked on settings")
+//      }
+//   }
+// ]
+
 const createTray = () => {
   tray = new Tray(path.join('electorn-logo-2.png'))
+  //let trayMenu = Menu.buildFromTemplate(trayMenuTemplate)
   tray.on('click', function (event) {
     toggleWindow()
   });
@@ -62,6 +73,7 @@ const toggleWindow = () => {
 const showWindow = () => {
   const position = getWindowPosition();
   window.setPosition(position.x, position.y, false);
+  //positioner.position(trayWindow, trayBounds, alignment);
   window.show();
 }
 
