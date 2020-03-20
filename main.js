@@ -46,7 +46,7 @@ const getWindowPosition = () => {
   return {x: x, y: y};
   }
   else{
-    return {x: 1000, y: 4}
+    return {x: 1500, y: 5}
   }
   
 }
