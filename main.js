@@ -41,7 +41,8 @@ const createWindow = () => {
     transparent: false,
     skipTaskbar: true,
     webPreferences: {
-      backgroundThrottling: false
+      backgroundThrottling: false,
+      sandbox: false
     }
   })
   window.loadURL(`file://${path.join(__dirname, 'index.html')}`)
