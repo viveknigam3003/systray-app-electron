@@ -35,7 +35,7 @@ const createTray = () => {
       label: 'Separator', type: 'separator'
     },
     { label: 'Help Centre', click: () => {
-      console.log("Coming Soon!");
+      showHelp();
       }},
       { label: 'Quit', click: () => {
         window.destroy();
@@ -83,7 +83,6 @@ const createWindow = () => {
       sandbox: false
     }
   })
-  window.loadURL(`file://${path.join(__dirname, './app/index.html')}`)
 
   // Hide the window when it loses focus
   window.on('blur', () => {
@@ -100,7 +99,14 @@ const toggleWindow = () => {
 const showWindow = () => {
   const position = getWindowPosition();
   window.setPosition(position.x, position.y, false);
-  //positioner.position(trayWindow, trayBounds, alignment);
+  window.loadURL(`file://${path.join(__dirname, './app/index.html')}`)
+  window.show();
+}
+
+const showHelp = () => {
+  const position = getWindowPosition();
+  window.setPosition(position.x, position.y, false);
+  window.loadURL(`file://${path.join(__dirname, './app/help.html')}`);
   window.show();
 }
 
