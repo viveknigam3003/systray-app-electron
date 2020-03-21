@@ -29,8 +29,8 @@ const createTray = () => {
   const contextMenu = Menu.buildFromTemplate([
     { label: 'Hello World', click: () => {
       showWindow();
-    }
-  },
+      }
+    },
     {
       label: 'Separator', type: 'separator'
     },
@@ -46,9 +46,7 @@ const createTray = () => {
   tray.on('click', function (event) {
     toggleWindow()
   });
-  tray.on('right-click', function(event) {
-    tray.setContextMenu(contextMenu);
-  });
+  tray.setContextMenu(contextMenu);
 }
 
 const getWindowPosition = () => {
