@@ -30,6 +30,9 @@ const createTray = () => {
     { label: 'Hello World', click: () => {
       showWindow();
     }
+  },
+    {
+      label: 'Separator', type: 'separator'
     },
     { label: 'Help Centre', click: () => {
       console.log("Coming Soon!");
@@ -40,9 +43,11 @@ const createTray = () => {
       }
   ])
   tray.setToolTip('Hello World')
-  tray.setContextMenu(contextMenu)
   tray.on('click', function (event) {
     toggleWindow()
+  });
+  tray.on('right-click', function(event) {
+    tray.setContextMenu(contextMenu);
   });
 }
 
@@ -80,7 +85,7 @@ const createWindow = () => {
       sandbox: false
     }
   })
-  window.loadURL(`file://${path.join(__dirname, 'index.html')}`)
+  window.loadURL(`file://${path.join(__dirname, './app/index.html')}`)
 
   // Hide the window when it loses focus
   window.on('blur', () => {
