@@ -55,10 +55,10 @@ const getWindowPosition = () => {
 
   if (currentPlatform != 'LINUX'){
     // Center window horizontally below the tray icon
-  const x = Math.round(trayBounds.x - (trayBounds.width / 2) + (windowBounds.width / 2) - 250);
+  const x = Math.round(trayBounds.x - (trayBounds.width / 2) + (windowBounds.width / 2) - 320);
 
   // Position window 4 pixels vertically below the tray icon
-  const y = Math.round(trayBounds.y - trayBounds.height - 415);
+  const y = Math.round(trayBounds.y - trayBounds.height - 440);
 
   return {x: x, y: y};
   }
@@ -68,16 +68,20 @@ const getWindowPosition = () => {
   
 }
 
+
+//-40 in size for setting the constant value in position
 const createWindow = () => {
   window = new BrowserWindow({
-    width: 320,
-    height: 450,
+    width: 360,
+    height: 480,
     show: false,
     frame: false,
     fullscreenable: false,
     resizable: false,
     transparent: false,
     skipTaskbar: true,
+    scrollable: false,
+    backgroundColor: '#fffafa',
     webPreferences: {
       backgroundThrottling: false,
       sandbox: false

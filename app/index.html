@@ -3,17 +3,26 @@
 
 <head>
   <meta charset="utf-8">
+  <link rel="preload" href="./css/fonts/Cern.ttf" as="font">
+  <link rel="preload" href="./css/fonts/Cern-Light.ttf" as="font">
+  <link rel="preload" href="./css/fonts/Cern-Medium.ttf" as="font">
+  <link rel="preload" href="./css/fonts/Cern-Bold.ttf" as="font">
   <link rel="stylesheet" type="text/css" href="./css/style.css">
   <title>Hello World</title>
 </head>
 
 <body>
   <div class="new"></div>
-  <h1>Hello World!</h1>
-  <h2>This is a demo ElectronJS Systay App</h2><br><br>
-  <h2><span style="font-weight: 500;">Author:</span>  Vivek Nigam</h2>
-  <button type="button" name="button" onclick="doNotify()">Send Notification</button>
-  <button type="button" name="quit" onclick="window.close()">Quit</button>
+  <div>
+    <span class="header">Hello World!</span><br>
+    <span class="title2">This is a demo ElectronJS Systay App</span><br><br>
+  </div>
+  
+  <div>
+    <button type="button" class="button" name="button" onclick="doNotify()">Send Notification</button>
+    <button type="button" class="button" name="quit" onclick="window.close()">Quit</button>
+  </div><br>
+  <span class="text">Author: Vivek Nigam</span><br>
   <script src="./js/app.js"></script>
 </body>
 

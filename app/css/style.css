@@ -1,3 +1,41 @@
+@font-face {
+  font-family: "Cern Regular";
+  font-weight: 400;
+  font-display: auto;
+  src: url("./fonts/Cern.ttf");
+}
+
+@font-face {
+  font-family: "Cern Light";
+  font-weight: 300;
+  font-display: auto;
+  src: url("./fonts/Cern-Light.ttf");
+}
+
+@font-face {
+  font-family: "Cern Medium";
+  font-weight: 500;
+  font-display: auto;
+  src: url("./fonts/Cern-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Cern Bold";
+  font-weight: 700;
+  font-display: auto;
+  src: url("./fonts/Cern-Bold.ttf");
+}
+
+.wf-loading body 
+{
+  visibility: hidden;
+}
+.wf-active body .wf-inactive body 
+{
+  visibility: visible;
+  font-family: "Cern Regular";
+}
+
 .new
 {
   border: #424242;
@@ -6,44 +44,94 @@
 
 html
 {
-  background: #ffffff;  /* fallback for old browsers */
+  background: #fffafa;  /* fallback for old browsers */
   background-attachment: fixed;
-  color: #6cacc5;
+  margin: 0; height: 100%; overflow: hidden
 }
 
-body 
+body
 {
-    color: #424242;
-    font: 300 15px/1.6 "SF Pro Display",sans-serif;
+    color: #000000;
+    font: 300 18px/1.6 "Cern Regular",sans-serif;
     margin: 1em;
     padding: 5em 0 2em;
     text-align: left;
+    height: 100%; overflow: hidden
 }
 
-h1 
+.bodytext
 {
-  font: 35px/1.6 "SF Pro Display",sans-serif;
-  color: #6cacc5;
-  font-weight: 600;
+    color: #000000;
+    font-family: "Cern Regular", Fallback, sans-serif;
+    font-size: 18px;
+    padding: 5em 0 2em;
+    text-align: left;
+    opacity: 60%;
+}
+
+.display
+{
+  font: 46px/1.6 "Cern Light",sans-serif;
+  color: #3e55ab;
   margin: 0;
 }
 
-h2
+.header
 {
-  font: 300 15px/1.6 "SF Pro Display",sans-serif;
-  font-weight: 300;
-    margin: 0;
+  font: 38px/1.6 "Cern Bold",sans-serif;
+  color: #3e55ab;
+  margin: 0;
 }
+
+.title1
+{
+  font: 32px/1.6 "Cern Medium",sans-serif;
+  color: #000000;
+  opacity: 85%;
+  margin: 0;
+}
+
+.title2
+{
+  font: 26px/1.6 "Cern Medium",sans-serif;
+  color: #000000;
+  opacity: 85%;
+  margin: 0;
+}
+
+.headline
+{
+  font: 24px/1.6 "Cern Regular",sans-serif;
+  color: #008db9;
+  opacity: 85%;
+  margin: 0;
+}
+
+.caption
+{
+  font: 16px/1.6 "Cern Regular",sans-serif;
+  color: #000000;
+  opacity: 50%;
+  margin: 0;
+}
+
+.text
+{
+  font: 16px/1.6 "Cern Medium",sans-serif;
+  color: #000000;
+  opacity: 80%;
+  margin: 0;
+}
+
 
 button
 {
-  font: 300 12px/1.6 "SF Pro Display",sans-serif;
-  font-weight: 500;
-  color: #ffffff;
+  font: 18px/1.6 "Cern Medium",sans-serif;
+  color: #fffafa;
   border-radius: 5px 5px 5px 5px;
   border-width: 0;
   padding: 5px;
-  margin-top: 5px;
-  margin-right: 5px;
-  background-color: #6cacc5;
+  margin-top: 10px;
+  margin-right: 0px;
+  background-color: #008db9;
 }
