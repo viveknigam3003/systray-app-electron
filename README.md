@@ -8,3 +8,5 @@ $ git clone ...
 $ cd systray-app-electron
 $ npm start
 ```
+
+This app is still in development phase.
